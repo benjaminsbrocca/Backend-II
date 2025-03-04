@@ -1,0 +1,13 @@
+<h1>Carrito de Compras</h1>
+
+
+<div id="contenedorProductos" class="productGrid">
+  {{#each productos}}
+  <div class="productCard textCard">
+    {{#each this.productos}}
+    <p class="cartText">Producto: {{this.product.title}}</p>
+    <p class="cartText">Cantidad: {{this.quantity}}</p>
+    {{/each}}
+  </div>
+  {{/each}}
+</div>

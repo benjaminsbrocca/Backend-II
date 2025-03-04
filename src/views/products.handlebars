@@ -1,0 +1,36 @@
+<h1> Kiosco </h1>
+<h2> Productos </h2>
+
+
+<div id="contenedorProductos" class="productGrid">
+
+    {{#each productos}}
+    <div class="productCard textCard">
+        <h3>{{title}}</h3>
+        <p>${{price}}</p>
+        <p>{{category}} </p>
+        <button class="btn btn-primary" onclick="agregarAlCarrito('{{_id}}')"> Agregar al Carrito </button>
+    </div>
+    {{/each}}
+
+</div>
+
+<div class="contenedorPages">
+
+    <div class="contenedorPage">
+
+        {{#if hasPrevPage}}
+        <a href="/products?page={{prevPage}}"> Anterior </a>
+        {{/if}}
+
+        {{#if hasNextPage}}
+        <a href="/products?page={{nextPage}}"> Siguiente </a>
+        {{/if}}
+        
+    </div>
+
+    <div class="contenedorPageDos">
+        <p>Pagina {{currentPage}} de {{totalPages}} </p>
+    </div>
+
+</div>
